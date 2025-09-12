@@ -1,0 +1,58 @@
+<div class="container">
+
+  <h2>List of Employee</h2>
+
+  <button (click)="addNewEmployee()" class="btn btn-primary">Add New Employee</button>
+  <br /><br />
+
+  @if (message) {
+    <p class="message">{{ message }}</p>
+  }
+
+  @if (employees.length > 0) {
+    <table border="1" cellpadding="10">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Division</th>
+        <th>Building</th>
+        <th>Title</th>
+        <th>Room</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (emp of employees; track emp.id) {
+          <tr>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.firstName }} {{ emp.lastName }}</td>
+            <td>{{ emp.division }}</td>
+            <td>{{ emp.building }}</td>
+            <td>{{ emp.title }}</td>
+            <td>{{ emp.room }}</td>
+            <td>
+              <button (click)="editEmployee(emp.id!)" class="btn btn-sm btn-warning">Edit</button>
+              <button (click)="deleteEmployee(emp.id!)" class="btn btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+
+  @if (employees.length === 0) {
+    <p>No Employee found !</p>
+  }
+
+  <hr />
+
+  <h3>XML File Upload</h3>
+  <input type="file" (change)="onFileSelected($event)" accept=".xml" />
+  <button (click)="onFileSelected({target: {files: [null]}})" style="display:none;">Select</button>
+
+  @if (message && message.includes('Upload')) {
+    <p>{{ message }}</p>
+  }
+
+</div>
