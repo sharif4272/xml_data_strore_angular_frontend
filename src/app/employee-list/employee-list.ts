@@ -38,7 +38,7 @@ export class EmployeeListComponent implements OnInit {
       this.employeeService.deleteEmployee(id).subscribe({
         next: () => {
           this.message = 'Employee deleted successfully!';
-          this.loadEmployees(); // আপডেট করে নতুন লিস্ট লোড করুন
+          this.loadEmployees();
         },
         error: (err) => {
           console.error('Failed to delete:', err);
@@ -50,6 +50,10 @@ export class EmployeeListComponent implements OnInit {
 
   editEmployee(id: number): void {
     this.router.navigate(['/edit', id]);
+  }
+
+  viewEmployee(id: number): void {
+    this.router.navigate(['/detail', id]);
   }
 
   addNewEmployee(): void {
