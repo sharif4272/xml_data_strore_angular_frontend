@@ -1,0 +1,22 @@
+<nav class="sidebar bg-dark text-white p-3 d-flex flex-column" [class.collapsed]="isCollapsed && isMobile">
+  <h5 class="text-center mb-4 d-md-block d-none">HR Dashboard</h5>
+
+  <!-- Toggle Button for Mobile -->
+  <button class="btn btn-outline-light mb-3 d-md-none" (click)="toggleSidebar()">
+    <i class="bi" [ngClass]="isCollapsed ? 'bi-list' : 'bi-x'"></i>
+  </button>
+
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center gap-2" routerLink="/employees" routerLinkActive="active">
+        <i class="bi bi-people"></i> Employees
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link d-flex align-items-center gap-2" routerLink="/add" routerLinkActive="active">
+        <i class="bi bi-person-plus"></i> Add Employee
+      </a>
+    </li>
+    <!-- Add more links as needed -->
+  </ul>
+</nav>

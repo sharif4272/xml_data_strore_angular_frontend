@@ -1,0 +1,9 @@
+/* Optional: Ensure sidebar doesn't overflow on small screens */
+@media (max-width: 767.98px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+}

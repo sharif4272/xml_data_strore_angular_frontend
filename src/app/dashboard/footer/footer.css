@@ -1,0 +1,9 @@
+.bg-brand {
+  background-color: #85a794; /* Teal */
+}
+
+/* Optional: Add hover or transition */
+.bg-brand:hover {
+  background-color: #a4d8b9;
+  transition: background-color 0.3s ease;
+}
