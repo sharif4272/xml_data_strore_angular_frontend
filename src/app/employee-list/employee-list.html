@@ -202,7 +202,7 @@
         <div class="employee-card p-4 bg-light rounded">
           <div class="d-flex align-items-center mb-4">
             <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px;">
-              {{ selectedEmployee.firstName?.charAt(0) }}{{ selectedEmployee.lastName?.charAt(0) }}
+              {{ selectedEmployee.firstName.charAt(0) }}{{ selectedEmployee.lastName.charAt(0) }}
             </div>
             <div class="ms-3">
               <h4 class="mb-0">{{ selectedEmployee.firstName }} {{ selectedEmployee.lastName }}</h4>
@@ -218,8 +218,6 @@
             </div>
             <div class="col-6">
               <p class="mb-1"><strong>Room:</strong> {{ selectedEmployee.room }}</p>
-              <p class="mb-1"><strong>Email:</strong> —</p>
-              <p class="mb-1"><strong>Phone:</strong> —</p>
             </div>
           </div>
         </div>
